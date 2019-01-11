@@ -1,0 +1,25 @@
+<?php
+/**
+ * See LICENSE.md for license details.
+ */
+
+/** @var \Netresearch\ConfigTypes\Block\CustomInformation $block */
+?>
+<div class="nr-custom-info"
+     style="background: #f1f1f1;
+            border: 1px solid #e3e3e3;
+            overflow: hidden;
+            line-height: 1.5;">
+    <header style="background: <?php echo $block->escapeHtmlAttr($block->getBackgroundCss()); ?>">
+        <?php if ($block->getLogoUrl()) : ?>
+            <img src="<?php echo $block->escapeHtmlAttr($block->getLogoUrl()); ?>"
+                 style="width: 150px;">
+        <?php endif; ?>
+        <?php /* @noEscape */ echo $block->renderHeader(); ?>
+    </header>
+    <div class="container" style="padding: 3%;">
+        <div class="row">
+            <?php /* @noEscape */echo $block->renderBody(); ?>
+        </div>
+    </div>
+</div>
