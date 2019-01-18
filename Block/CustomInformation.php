@@ -4,7 +4,7 @@
  */
 declare(strict_types=1);
 
-namespace Netresearch\ConfigTypes\Block;
+namespace Netresearch\ConfigFields\Block;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Framework\Data\Form\Element\AbstractElement;
@@ -28,7 +28,7 @@ use Magento\Framework\View\Element\Template;
  * You can declare field_config entries like this in your system.xml <field> node:
  * <attribute type="logo">Vendor_ModuleName::images/logo.svg</attribute>
  *
- * @package Netresearch\ConfigTypes\Block
+ * @package Netresearch\ConfigFields\Block
  * @author    Max Melzer <max.melzer@netresearch.de>
  * @copyright 2018 Netresearch DTT GmbH
  * @link      http://www.netresearch.de/
@@ -76,7 +76,7 @@ class CustomInformation extends Field
      */
     public function getTemplate(): string
     {
-        return 'Netresearch_ConfigTypes::customInformation.phtml';
+        return 'Netresearch_ConfigFields::customInformation.phtml';
     }
 
     /**

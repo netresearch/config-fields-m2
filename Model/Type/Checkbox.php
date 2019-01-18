@@ -4,7 +4,7 @@
  */
 declare(strict_types=1);
 
-namespace Netresearch\ConfigTypes\Model\Type;
+namespace Netresearch\ConfigFields\Model\Type;
 
 use Magento\Framework\Data\Form\Element\Checkbox as CoreCheckbox;
 
@@ -14,7 +14,7 @@ use Magento\Framework\Data\Form\Element\Checkbox as CoreCheckbox;
  * Implementation of a checkbox boolean input element that works inside the Magento system configuration.
  * Used by entering the class name into the "type" attribute of a system.xml field element.
  *
- * @package Netresearch\ConfigTypes\Model\Type
+ * @package Netresearch\ConfigFields\Model\Type
  * @author    Max Melzer <max.melzer@netresearch.de>
  * @copyright 2018 Netresearch DTT GmbH
  * @link      http://www.netresearch.de/

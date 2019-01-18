@@ -1,5 +1,5 @@
 {
-  "name": "netresearch/config-types-m2",
+  "name": "netresearch/config-fields-m2",
   "version": "1.0.0",
   "type": "magento2-module",
   "description": "A collection of custom config types for Magento 2 system configuration development.",
@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Netresearch\\ConfigTypes\\": ""
+      "Netresearch\\ConfigFields\\": ""
     },
     "files": [
       "registration.php"
