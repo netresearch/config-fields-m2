@@ -60,8 +60,8 @@ For example:
     <frontend_model>Netresearch\ConfigTypes\Block\InfoBox</frontend_model>
     <attribute type="logo">Some_Module::images/logo.svg</attribute>
     <attribute type="body_template">Some_Module::system/config/infoBoxBody.phtml</attribute>
-    <attribute type="header_block">Dhl\Express\Block\Adminhtml\System\InfoBoxHeader</attribute>
     <attribute type="header_template">Some_Module::system/config/infoBoxHeader.phtml</attribute>
+    <attribute type="view_model">Some\Module\ViewModel\Adminhtml\System\InfoBox</attribute>
     <attribute type="background">#ffcc01</attribute>
 </field>
 ```

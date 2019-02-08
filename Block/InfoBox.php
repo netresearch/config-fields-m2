@@ -11,6 +11,7 @@ use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\View\Asset\Repository;
 use Magento\Framework\View\Element\Template;
+use Netresearch\ConfigFields\Factory\ViewModelFactory;
 
 /**
  * Class InfoBox
@@ -20,10 +21,9 @@ use Magento\Framework\View\Element\Template;
  *
  * - logo            Template path to an image to display in the header of the box
  * - background      Background CSS for the box header
- * - header_block    Block class to render in the box header
  * - header_template Template to render in the box header
- * - body_block      Block class to render in the box body
  * - body_template   Template to render in the box body
+ * - view_model      View Model class available in the box header and body
  *
  * You can declare field_config entries like this in your system.xml <field> node:
  * <attribute type="logo">Vendor_ModuleName::images/logo.svg</attribute>
@@ -42,6 +42,11 @@ class InfoBox extends Field
     private $repository;
 
     /**
+     * @var ViewModelFactory
+     */
+    private $viewModelFactory;
+
+    /**
      * @var AbstractElement
      */
     private $element;
@@ -51,9 +56,11 @@ class InfoBox extends Field
      *
      * @param Context $context
      * @param Repository $repository
+     * @param ViewModelFactory $viewModelFactory
      */
-    public function __construct(Context $context, Repository $repository)
+    public function __construct(Context $context, Repository $repository, ViewModelFactory $viewModelFactory)
     {
+        $this->viewModelFactory = $viewModelFactory;
         $this->repository = $repository;
 
         parent::__construct($context);
@@ -102,13 +109,18 @@ class InfoBox extends Field
      */
     public function renderHeader(): string
     {
-        $blockClass = $this->element->getData('field_config', 'header_block') ?? Template::class;
-        $blockTemplate = $this->element->getData('field_config', 'header_template') ?? '';
+        $viewModel = $this->element->getData('field_config', 'view_model');
+        $template = $this->element->getData('field_config', 'header_template');
 
         $block = $this->_layout->createBlock(
-            $blockClass,
+            Template::class,
             'infobox_header_' . $this->element->getHtmlId(),
-            ['data' => ['template' => $blockTemplate]]
+            [
+                'data' => [
+                    'template' => $template,
+                    'view_model' => $this->viewModelFactory->create($viewModel)
+                ],
+            ]
         );
 
         return $block->toHtml();
@@ -119,13 +131,18 @@ class InfoBox extends Field
      */
     public function renderBody(): string
     {
-        $blockClass = $this->element->getData('field_config', 'body_block') ?? Template::class;
-        $blockTemplate = $this->element->getData('field_config', 'body_template') ?? '';
+        $viewModel = $this->element->getData('field_config', 'view_model');
+        $template = $this->element->getData('field_config', 'body_template');
 
         $block = $this->_layout->createBlock(
-            $blockClass,
+            Template::class,
             'infobox_body_' . $this->element->getHtmlId(),
-            ['data' => ['template' => $blockTemplate]]
+            [
+                'data' => [
+                    'template' => $template,
+                    'view_model' => $this->viewModelFactory->create($viewModel)
+                ],
+            ]
         );
 
         return $block->toHtml();
