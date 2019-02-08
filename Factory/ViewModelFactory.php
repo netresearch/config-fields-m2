@@ -5,7 +5,7 @@
 namespace Netresearch\ConfigFields\Factory;
 
 use Magento\Framework\ObjectManagerInterface;
-use TypeDuplication\ArgumentInterface;
+use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 /**
  * Class ViewModelFactory
@@ -37,7 +37,7 @@ class ViewModelFactory
      * @param string $className
      * @return ArgumentInterface|null
      */
-    public function create(string $className)
+    public function create(string $className): ArgumentInterface
     {
         if (class_exists($className)) {
             return $this->objectManager->create($className);

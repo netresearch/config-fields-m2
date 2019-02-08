@@ -13,6 +13,7 @@ for use in Magento 2 extensions with a system configuration section.
 - Radioset: Functionally equivalent to native Magento field type `select`
 - Checkbox: Functionally equivalent to native Magento field type `select` with `YesNo` source model
 - Toggle: Same as "Checkbox", but with special styling
+- TimeWithMinutePrecision: Works like the Magento field type `time` but hides the 'seconds' selection.
 
 ### Custom frontend model blocks
 
