@@ -89,7 +89,7 @@ class Checkbox extends CoreCheckbox
         return sprintf(
             $html,
             $this->getHtmlId(),
-            $this->getButtonLabel()
+            __($this->getButtonLabel())
         );
     }
 }
