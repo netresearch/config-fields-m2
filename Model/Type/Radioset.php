@@ -41,7 +41,7 @@ class Radioset extends Radios
     {
         $this->setData('after_element_html', $this->getSecondaryLabelHtml() . $this->getJsHtml());
 
-        return parent::getElementHtml();
+        return '<span style="font-size: 14px">' . parent::getElementHtml() . '</span>';
     }
 
     /**
