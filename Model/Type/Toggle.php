@@ -30,7 +30,7 @@ class Toggle extends Checkbox
         $this->setData('style', 'position:absolute; clip:rect(0,0,0,0); overflow:hidden');
         $this->addClass('admin__actions-switch-checkbox');
 
-        return parent::getElementHtml();
+        return '<span style="font-size: 14px">' . parent::getElementHtml() . '</span>';
     }
 
     /**

@@ -32,7 +32,7 @@ class Checkbox extends CoreCheckbox
         $this->setIsChecked((bool)$this->getData('value'));
         $this->setData('after_element_js', $this->getSecondaryLabelHtml() . $this->getJsHtml());
 
-        return parent::getElementHtml();
+        return '<span style="font-size: 14px">' . parent::getElementHtml() . '</span>';
     }
 
     /**

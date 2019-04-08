@@ -33,7 +33,7 @@ class Checkboxset extends Checkboxes
         $this->setData('value', $this->filterUnavailableValues());
         $this->setData('after_element_html', $this->getAfterHtml());
 
-        return parent::getElementHtml();
+        return '<span style="font-size: 14px">' . parent::getElementHtml() . '</span>';
     }
 
     /**
