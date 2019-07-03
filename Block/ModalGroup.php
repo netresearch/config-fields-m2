@@ -111,7 +111,7 @@ class ModalGroup extends \Magento\Backend\Block\AbstractBlock implements
      */
     private function getHeaderCommentHtml(AbstractElement $element): string
     {
-        return $element->getComment() ? '<div class="comment">' . $element->getComment() . '</div>' : '';
+        return $element->getComment() ? '<p class="note">' . $element->getComment() . '</p>' : '';
     }
 
     /**
