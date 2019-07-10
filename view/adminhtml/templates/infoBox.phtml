@@ -5,25 +5,15 @@
 
 /** @var \Netresearch\ConfigFields\Block\InfoBox $block */
 ?>
-<div class="nr-custom-info"
-     style="background: #f1f1f1;
-            border: 1px solid #e3e3e3;
-            overflow: hidden;
-            max-width: 77%;
-            line-height: 1.5;">
-    <header style="display: flex;
-                   flex-wrap: wrap;
-                   justify-content: space-between;
-                   align-items: center;
-                   padding: 1.5% 3%;
-                   background: <?php echo $block->escapeHtmlAttr($block->getBackgroundCss()); ?>">
-        <?php if ($block->getLogoUrl()) : ?>
-            <img src="<?php echo $block->escapeHtmlAttr($block->getLogoUrl()); ?>"
-                 style="width: 150px;">
+
+<div class="nr-custom-infobox<?php if ($block->getCssClass()): ?> <?php echo $block->escapeHtmlAttr($block->getCssClass()); ?><?php endif; ?>">
+    <header>
+        <?php if ($block->getLogoUrl()): ?>
+            <img src="<?php echo $block->escapeHtmlAttr($block->getLogoUrl()); ?>" alt="">
         <?php endif; ?>
         <?php /* @noEscape */ echo $block->renderHeader(); ?>
     </header>
-    <div class="container" style="padding: 3%;">
+    <div class="container">
         <div class="row">
             <?php /* @noEscape */echo $block->renderBody(); ?>
         </div>

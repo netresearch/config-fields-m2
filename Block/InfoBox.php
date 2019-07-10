@@ -20,7 +20,7 @@ use Netresearch\ConfigFields\Factory\ViewModelFactory;
  * Available optional parameters via your element's field_config:
  *
  * - logo            Template path to an image to display in the header of the box
- * - background      Background CSS for the box header
+ * - css_class       Additional CSS class for the box
  * - header_template Template to render in the box header
  * - body_template   Template to render in the box body
  * - view_model      View Model class available in the box header and body
@@ -89,19 +89,19 @@ class InfoBox extends Field
     /**
      * @return string
      */
-    public function getLogoUrl(): string
+    public function getCssClass(): string
     {
-        $logoUrl = $this->element->getData('field_config', 'logo');
-
-        return $logoUrl ? $this->repository->getUrl($logoUrl) : '';
+        return $this->element->getData('field_config', 'css_class') ?? '';
     }
 
     /**
      * @return string
      */
-    public function getBackgroundCss(): string
+    public function getLogoUrl(): string
     {
-        return $this->element->getData('field_config', 'background') ?? '';
+        $logoUrl = $this->element->getData('field_config', 'logo');
+
+        return $logoUrl ? $this->repository->getUrl($logoUrl) : '';
     }
 
     /**
