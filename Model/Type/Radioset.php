@@ -60,7 +60,7 @@ class Radioset extends Radios
 <script>
     (function() {
         let radios = document.querySelectorAll("input[type='radio'][name='{$this->getName()}']");
-        let hidden = document.getElementById("{$this->getId()}");
+        let hidden = document.getElementById("{$this->getHtmlId()}");
 
         for (let i = 0; i < radios.length; i++) {
             if (radios[i].type === "radio") {
