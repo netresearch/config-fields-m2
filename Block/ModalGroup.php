@@ -160,13 +160,14 @@ HTML;
     private function getButtonHtml(AbstractElement $element): string
     {
         $buttonLabel = __('Configure');
+        $groupLabel  = __($element->getData('group/label'));
 
         return <<<HTML
 <table>
     <tr>
         <td class="label">
             <label for="{$element->getHtmlId()}">
-                <span>{$element->getData('group/label')}</span>
+                <span>{$groupLabel}</span>
             </label>
         </td>
         <td class="value">
@@ -189,7 +190,7 @@ HTML;
      */
     private function getHeaderCommentHtml(AbstractElement $element): string
     {
-        return $element->getComment() ? '<p class="note">' . $element->getComment() . '</p>' : '';
+        return $element->getComment() ? '<p class="note">' . __($element->getComment()) . '</p>' : '';
     }
 
     /**
@@ -300,7 +301,7 @@ HTML;
     {
         $buttonId = $element->getHtmlId() . '_button';
         $modalId  = $element->getHtmlId() . '_modal';
-        $label    = $element->getData('group/label');
+        $label    = __($element->getData('group/label'));
 
         $hiddenFieldIds = [];
         foreach ($element->getElements() as $field) {
