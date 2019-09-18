@@ -108,7 +108,7 @@ class ModalGroup extends AbstractBlock implements RendererInterface
      */
     private function getInputsHtml(AbstractElement $element): string
     {
-        $html      = '';
+        $html      = '<div>';
         $proxyHtml = '';
         $modalId   = $element->getHtmlId() . '_modal';
 
@@ -143,6 +143,7 @@ HTML;
             $field->setName(str_replace('[proxy]', '', $field->getName()));
         }
 
+        $html .= '</div>';
         $html .= <<<HTML
 <table class="accordion" style="width: 100%" id="{$modalId}">
     <tbody class="config">{$proxyHtml}</tbody>
