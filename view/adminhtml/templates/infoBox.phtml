@@ -5,17 +5,20 @@
 
 /** @var \Netresearch\ConfigFields\Block\InfoBox $block */
 ?>
-
-<div class="nr-custom-infobox<?php if ($block->getCssClass()): ?> <?php echo $block->escapeHtmlAttr($block->getCssClass()); ?><?php endif; ?>">
-    <header>
-        <?php if ($block->getLogoUrl()): ?>
-            <img src="<?php echo $block->escapeHtmlAttr($block->getLogoUrl()); ?>" alt="">
-        <?php endif; ?>
-        <?php /* @noEscape */ echo $block->renderHeader(); ?>
-    </header>
-    <div class="container">
-        <div class="row">
-            <?php /* @noEscape */echo $block->renderBody(); ?>
+<tr>
+    <td colspan="4">
+        <div class="nr-custom-infobox<?php if ($block->getCssClass()): ?> <?php echo $block->escapeHtmlAttr($block->getCssClass()); ?><?php endif; ?>">
+            <header>
+                <?php if ($block->getLogoUrl()): ?>
+                    <img src="<?php echo $block->escapeUrl($block->getLogoUrl()); ?>" alt="">
+                <?php endif; ?>
+                <?php /* @noEscape */ echo $block->renderHeader(); ?>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <?php /* @noEscape */echo $block->renderBody(); ?>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </td>
+</tr>
