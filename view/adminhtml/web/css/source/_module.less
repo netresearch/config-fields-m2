@@ -15,73 +15,72 @@
     }
 
     header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         background: #eee;
         padding: 15px 25px 10px;
         position: relative;
         border-bottom: 1px solid #ddd;
-
-        .info {
-            position: absolute;
-            right: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
 
         img {
             width: 150px;
         }
     }
 
-    .col {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 25px;
-    }
+    .container {
+        .row {
+            display: flex;
 
-    .content {
-        float: left;
-        width: 75%;
+            .col {
 
-        p {
-            margin: 0 0 1.5em;
-        }
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 25px;
 
-        p:last-of-type {
-            margin-bottom: 0.75em;
-        }
+                &.content {
+                    p {
+                        margin: 0 0 1.5em;
+                    }
 
-        ul,
-        ol {
-            margin: 0 0 0 1.5em;
-            padding-left: 0;
-            list-style: decimal;
-        }
-    }
+                    p:last-of-type {
+                        margin-bottom: 0.75em;
+                    }
 
-    .side {
-        float: right;
-        width: 25%;
+                    ul,
+                    ol {
+                        margin: 0 0 0 1.5em;
+                        padding-left: 0;
+                        list-style: decimal;
+                    }
+                }
 
-        aside {
-            background: #fff;
-            border: 1px dashed #ddd;
+                &.side {
+                    flex-shrink: 1;
 
-            ul {
-               padding-left: 15px;
-            }
+                    aside {
+                        background: #fff;
+                        border: 1px dashed #ddd;
 
-            li {
-                list-style-position: inside;
-            }
+                        ul {
+                            padding-left: 15px;
+                        }
 
-            h3 {
-                font-size: 14px;
-                font-weight: 600;
-            }
+                        li {
+                            list-style-position: inside;
+                        }
 
-            .section{
-                padding: 15px;
+                        h3 {
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+
+                        .section {
+                            padding: 15px;
+                        }
+                    }
+                }
             }
         }
     }
