@@ -43,24 +43,26 @@ class Checkboxset extends Checkboxes
      */
     private function getAfterHtml(): string
     {
-        $html = '<input type="hidden" id="%s" value="%s"/>
+        $html = '<input type="hidden" id="%s" value="%s" %s/>
         <script>
             (function() {
-                let checkboxes = document.querySelectorAll("[name=\'%s\']");
-                let hidden = document.getElementById("%s");
+                var checkboxes = document.querySelectorAll("[name=\'%s\']");
+                var hidden = document.getElementById("%s");
                 /** Make the hidden input the submitted one. **/
                 hidden.name = checkboxes.item(0).name;
 
-                for (let i = 0; i < checkboxes.length; i++) {
+                for (var i = 0; i < checkboxes.length; i++) {
                     checkboxes[i].name = "";
-                    let values = hidden.value.split(",");
+                    var values = hidden.value.split(",");
                     if (values.indexOf(checkboxes[i].value) !== -1) {
                         checkboxes[i].checked = true;
                     }
+                    checkboxes[i].disabled = hidden.disabled;
                     /** keep the hidden input value in sync with the checkboxes. **/
                     checkboxes[i].addEventListener("change", function (event) {
-                        let checkbox = event.target;
-                        let values = hidden.value.split(",");
+                        var checkbox = event.target;
+                        var values = hidden.value.split(",");
+                        hidden.disabled = event.target.disabled;
                         var valueAlreadyIncluded = values.indexOf(checkbox.value) !== -1; 
                         if (checkbox.checked && !valueAlreadyIncluded) {
                             values.push(checkbox.value);
@@ -77,6 +79,7 @@ class Checkboxset extends Checkboxes
             $html,
             $this->getHtmlId() . self::PSEUDO_POSTFIX,
             $this->getData('value'),
+            $this->getData('disabled') ? 'disabled' : '',
             $this->getName(),
             $this->getHtmlId() . self::PSEUDO_POSTFIX
         );
@@ -93,7 +96,7 @@ class Checkboxset extends Checkboxes
         $values = $value ? explode(',', $value) : [];
 
         $availableValues = array_map(
-            function ($value) {
+            static function ($value) {
                 return $value['value'];
             },
             $this->getData('values')
