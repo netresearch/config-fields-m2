@@ -51,20 +51,25 @@ class Radioset extends Radios
      */
     private function getJsHtml()
     {
+        $disabledAttr = $this->getData('disabled') ? 'disabled' : '';
+
         return <<<HTML
 <input type="hidden"
        id="{$this->getHtmlId()}"
        class="{$this->getData('class')}"
        name="{$this->getName()}"
+       {$disabledAttr}
        value="{$this->getValue()}"/>
 <script>
     (function() {
-        let radios = document.querySelectorAll("input[type='radio'][name='{$this->getName()}']");
-        let hidden = document.getElementById("{$this->getHtmlId()}");
-
-        for (let i = 0; i < radios.length; i++) {
+        var radios = document.querySelectorAll("input[type='radio'][name='{$this->getName()}']");
+        var hidden = document.getElementById("{$this->getHtmlId()}");
+        
+        for (var i = 0; i < radios.length; i++) {
             if (radios[i].type === "radio") {
                 radios[i].name += "[pseudo]";
+                
+                radios[i].disabled = hidden.disabled;
 
                 // Keep the hidden input value in sync with the radio inputs. We also create a change event for the
                 // hidden input because core functionality might listen for it (and the original radio inputs will not
@@ -74,8 +79,9 @@ class Radioset extends Radios
                 radios[i].addEventListener("change", function (event) {
                     event.stopPropagation();
                     hidden.value = event.target.value;
+                    hidden.disabled = event.target.disabled;
 
-                    let newEvent = document.createEvent("HTMLEvents");
+                    var newEvent = document.createEvent("HTMLEvents");
                     newEvent.initEvent("change", false, true);
                     hidden.dispatchEvent(newEvent);
                 });
