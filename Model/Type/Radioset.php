@@ -26,10 +26,9 @@ class Radioset extends Radios
      * Add a display none style since the css directive that hides the original input element is missing in
      * system_config.
      *
-     * @param mixed $value
      * @return string
      */
-    public function getStyle($value): string
+    public function getStyle(): string
     {
         return 'display:none';
     }
@@ -64,11 +63,11 @@ class Radioset extends Radios
     (function() {
         var radios = document.querySelectorAll("input[type='radio'][name='{$this->getName()}']");
         var hidden = document.getElementById("{$this->getHtmlId()}");
-        
+
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].type === "radio") {
                 radios[i].name += "[pseudo]";
-                
+
                 radios[i].disabled = hidden.disabled;
 
                 // Keep the hidden input value in sync with the radio inputs. We also create a change event for the

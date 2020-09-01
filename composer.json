@@ -1,6 +1,6 @@
 {
   "name": "netresearch/config-fields-m2",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "magento2-module",
   "description": "A collection of custom config types for Magento 2 system configuration development.",
   "license": "OSL-3.0",
