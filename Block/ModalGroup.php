@@ -18,13 +18,6 @@ use Magento\Framework\Data\Form\Element\Fieldset;
 use Magento\Framework\Data\Form\Element\Renderer\RendererInterface;
 use Magento\Framework\Exception\LocalizedException;
 
-/**
- * Class ModalGroup
- *
- * @package Netresearch\ConfigFields\Block
- * @author  Max Melzer <max.melzer@netresearch.de>
- * @author  Rico Sonntag <rico.sonntag@netresearch.de>
- */
 class ModalGroup extends AbstractBlock implements RendererInterface
 {
     /**

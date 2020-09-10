@@ -17,10 +17,6 @@ use Magento\Framework\Data\Form\Element\Checkboxes;
  * multiselect, concatenating the values of all selected options separated with a comma inside a hidden input.
  * Used by entering the class name into the "type" attribute of a system.xml field element.
  *
- * @package Netresearch\ConfigFields\Model\Type
- * @author    Max Melzer <max.melzer@netresearch.de>
- * @copyright 2018 Netresearch DTT GmbH
- * @link      http://www.netresearch.de/
  * @api
  */
 class Checkboxset extends Checkboxes

@@ -30,10 +30,6 @@ use Netresearch\ConfigFields\Factory\ViewModelFactory;
  * You can declare field_config entries like this in your system.xml <field> node:
  * <attribute type="logo">Vendor_ModuleName::images/logo.svg</attribute>
  *
- * @package Netresearch\ConfigFields\Block
- * @author    Max Melzer <max.melzer@netresearch.de>
- * @copyright 2018 Netresearch DTT GmbH
- * @link      http://www.netresearch.de/
  * @api
  */
 class InfoBox extends Field

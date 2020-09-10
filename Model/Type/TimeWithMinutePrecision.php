@@ -15,10 +15,7 @@ use Magento\Framework\Data\Form\Element\Time;
  * TimeWithMinutePrecision is data compatible to the 'time' element type
  * but will always store '00' as seconds value.
  *
- * @package Netresearch\ConfigFields\Model\Type
- * @author    Max Melzer <max.melzer@netresearch.de>
- * @copyright 2019 Netresearch DTT GmbH
- * @link      http://www.netresearch.de/
+ * @api
  */
 class TimeWithMinutePrecision extends Time
 {

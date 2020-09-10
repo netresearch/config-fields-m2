@@ -16,10 +16,6 @@ use Magento\Framework\Data\Form\Element\Radios;
  * Implementation of a radio set input element that works inside the Magento system configuration.
  * Used by entering the class name into the "type" attribute of a system.xml field element.
  *
- * @package Netresearch\ConfigFields\Model\Type
- * @author    Max Melzer <max.melzer@netresearch.de>
- * @copyright 2018 Netresearch DTT GmbH
- * @link      http://www.netresearch.de/
  * @api
  */
 class Radioset extends Radios
