@@ -16,27 +16,13 @@ class ViewModelFactory
      */
     private $objectManager;
 
-    /**
-     * ViewModelFactory constructor.
-     *
-     * @param ObjectManagerInterface $objectManager
-     */
-    public function __construct(
-        ObjectManagerInterface $objectManager
-    ) {
+    public function __construct(ObjectManagerInterface $objectManager)
+    {
         $this->objectManager = $objectManager;
     }
 
-    /**
-     * @param string $className
-     * @return ArgumentInterface|null
-     */
     public function create(string $className): ArgumentInterface
     {
-        if (class_exists($className)) {
-            return $this->objectManager->create($className);
-        }
-
-        return null;
+        return $this->objectManager->create($className);
     }
 }
