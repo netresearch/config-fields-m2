@@ -1,4 +1,5 @@
 <?php
+
 /**
  * See LICENSE.md for license details.
  */

@@ -1,7 +1,9 @@
 <?php
+
 /**
  * See LICENSE.md for license details.
  */
+
 declare(strict_types=1);
 
 namespace Netresearch\ConfigFields\Model\Type;
@@ -46,7 +48,7 @@ class Toggle extends Checkbox
             $html,
             $this->getHtmlId(),
             $this->getButtonLabel() ?: __('Yes'),
-            $this->getButtonLabel()?: __('No')
+            $this->getButtonLabel() ?: __('No')
         );
     }
 }

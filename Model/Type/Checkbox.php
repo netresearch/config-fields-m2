@@ -1,7 +1,9 @@
 <?php
+
 /**
  * See LICENSE.md for license details.
  */
+
 declare(strict_types=1);
 
 namespace Netresearch\ConfigFields\Model\Type;
@@ -22,7 +24,7 @@ use Magento\Framework\Data\Form\Element\Checkbox as CoreCheckbox;
  */
 class Checkbox extends CoreCheckbox
 {
-    const PSEUDO_POSTFIX = '_pseudo'; // used to create the hidden input id.
+    private const PSEUDO_POSTFIX = '_pseudo'; // used to create the hidden input id.
 
     /**
      * @return string

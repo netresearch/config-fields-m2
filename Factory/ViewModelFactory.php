@@ -1,7 +1,9 @@
 <?php
+
 /**
  * See LICENSE.md for license details.
  */
+
 namespace Netresearch\ConfigFields\Factory;
 
 use Magento\Framework\ObjectManagerInterface;

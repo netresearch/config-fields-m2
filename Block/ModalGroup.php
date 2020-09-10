@@ -1,7 +1,9 @@
 <?php
+
 /**
  * See LICENSE.md for license details.
  */
+
 declare(strict_types=1);
 
 namespace Netresearch\ConfigFields\Block;
@@ -240,7 +242,7 @@ HTML;
      *
      * @see Slightly modified version of \Magento\Config\Block\System\Config\Form::_generateElementName
      */
-    private function _generateElementName(string $elementPath): string
+    private function generateElementName(string $elementPath): string
     {
         $part = explode('_', $elementPath);
         array_shift($part);
@@ -272,7 +274,7 @@ HTML;
             /** @var Field $dependentField */
             foreach ($dependencies as $dependentField) {
                 $dependentFieldId   = $dependentField->getId() . '_proxy';
-                $dependentFieldName = $this->_generateElementName($dependentField->getId());
+                $dependentFieldName = $this->generateElementName($dependentField->getId());
 
                 $dependenceBlock->addFieldMap(
                     $fieldId,
