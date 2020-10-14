@@ -116,7 +116,7 @@ class InfoBox extends Field
             [
                 'data' => [
                     'template' => $template,
-                    'view_model' => $this->viewModelFactory->create($viewModel)
+                    'view_model' => $viewModel ? $this->viewModelFactory->create($viewModel) : null
                 ],
             ]
         );
@@ -138,7 +138,7 @@ class InfoBox extends Field
             [
                 'data' => [
                     'template' => $template,
-                    'view_model' => $this->viewModelFactory->create($viewModel)
+                    'view_model' => $viewModel ? $this->viewModelFactory->create($viewModel) : null
                 ],
             ]
         );
