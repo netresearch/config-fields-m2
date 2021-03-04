@@ -49,11 +49,14 @@
                         margin-bottom: 0.75em;
                     }
 
-                    ul,
-                    ol {
+                    ul, ol {
                         margin: 0 0 0 1.5em;
                         padding-left: 0;
-                        list-style: decimal;
+                        list-style-type: decimal;
+
+                        ul, ol {
+                            list-style-type: lower-alpha;
+                        }
                     }
                 }
 
