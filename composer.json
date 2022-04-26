@@ -1,6 +1,6 @@
 {
   "name": "netresearch/config-fields-m2",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "type": "magento2-module",
   "description": "A collection of custom config types for Magento 2 system configuration development.",
   "license": "OSL-3.0",
@@ -23,10 +23,5 @@
     "files": [
       "registration.php"
     ]
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-DHLGW-1172": "1.3.0.x-dev"
-    }
   }
 }
