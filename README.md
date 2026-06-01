@@ -21,7 +21,7 @@ for use in Magento 2 extensions with a system configuration section.
 
 ## Installation via composer
 
-Requires PHP >=7.0 and Magento >=2.2
+Requires PHP 8.3, 8.4 or 8.5 and Magento 2.4.8 or 2.4.9.
 
 ```bash
 composer require netresearch/config-fields-m2:*
