@@ -8,4 +8,6 @@
 # (a repo setting), so no codeql.yml here. Add a test workflow per repo as
 # needed and list it under intentional-drift.
 template: php-module
-intentional-drift: []
+intentional-drift:
+  - path: .github/workflows/security.yml
+    reason: the magento/* requirements are only on repo.magento.com, which the shared Composer Audit job has no credentials for

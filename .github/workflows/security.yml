@@ -42,6 +42,8 @@ jobs:
 
   composer-audit:
     uses: netresearch/typo3-ci-workflows/.github/workflows/security.yml@main
+    with:
+      skip-composer-audit: true
     permissions:
       contents: read
       security-events: write
